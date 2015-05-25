@@ -52,14 +52,12 @@ function p(rgba, position) {
     pixel_context.putImageData( pixel_id, position[0], position[1]);
 }
 
-a(0, console.log, console, ['zero']);
-a(500, console.log, console, ['fuck yeah!']);
 var current_limit = 128;
 var current_count = 0;
 var direction = 0;
 var x = 0;
 var y = 0;
-for(i = 0; i < 2048; i++) {
+for(i = 0; i < 6072; i++) {
     switch(direction) {
         case 0:
             x++;
@@ -78,7 +76,7 @@ for(i = 0; i < 2048; i++) {
     }
     if(current_count > current_limit) {
         current_count = 0;
-        current_limit -= 8;
+        current_limit -= 2;
         if(direction < 3) {
             direction++;
         } else {
@@ -89,6 +87,7 @@ for(i = 0; i < 2048; i++) {
 
     a(i, p, window, [[0,0,0,255], [x,y]]);
 }
+
 
 window.requestAnimationFrame(run);
 
